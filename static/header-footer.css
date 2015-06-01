@@ -1,0 +1,232 @@
+/*
+
+Body
+
+*/
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+#main {
+    position:relative;
+    margin-top:2em;
+    clear:both;
+    margin-left:5%;
+    margin-right:5%;
+    min-height:65em;
+}
+
+#content-wrap {
+    width:100%;
+    height: 70%;
+}
+
+#chart svg {
+    background-color:rgb(255,255,255);
+    width:100%;
+    height: 100%;
+    margin-top:1em;
+}
+
+.selector {
+    font-size: 1em;
+    padding:0.3em;
+}
+
+button {
+    background-color:rgb(51, 122, 183);
+    width:5em;
+    text-decoration:none;
+    border:0px;
+    color:white;
+}
+
+#input-select-lower, #input-select-upper {
+	margin-bottom: 15px;
+    background-color:rgb(255,255,255);
+    height: 30px;
+}
+
+.label {
+    width: 100%;
+    color: gray;
+    position:relative;
+    text-align: center;
+    font-weight: bold;
+    bottom: -55px;
+}
+
+#select_lower {
+    float: left;
+}
+
+#select_upper {
+    position: absolute;
+}
+
+#slider_container {
+    height: 30px;
+    width: 45%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+#slider {
+    width: 100%;
+    height: 100%;
+}
+
+#smoothing_container {
+    height: 30px;
+    width: 15%;
+    float: right;
+}
+
+#smoothing_slider {
+    width: 100%;
+    height: 100%;
+}
+
+#menu {
+	list-style: none;
+    padding: 0.8em;
+    box-shadow:6px 6px 15px black;
+}
+
+#menu li a {
+    display: block;
+}
+
+#remove-menu {
+    color: blue;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+#select-type,#lang, #terms, #search-button, #options-menu, #downloads-menu, #case_in, #about-button {
+    height:2.5em;
+    font-size:1.2em;
+	    background-color:rgb(255,255,255);
+    color:black;
+    text-align:center;
+    padding-left:0.2em;
+        padding-right:0.2em;
+        vertical-align:middle;
+        border:0px;
+}
+
+#terms {
+    width:60%;
+    text-align:left;
+    border: 1px solid gray;
+}
+
+#lang {
+    width:8%;
+    margin-left: 1%;
+}
+
+#search-button {
+    background-color:rgb(51, 122, 183);
+    color:white;
+    margin-left: 0%;
+    font-weight: bold;
+    width:10%;
+}
+
+#options-menu {
+    background-color:rgb(232, 232, 232);
+    color:white;
+    margin-left: 2%;
+    width:6%;
+}
+
+#downloads-menu {
+    background-color:rgb(232, 232, 232);
+    color:white;
+    margin-left: 1%;
+    width:6%;
+}
+
+#terms:hover, #lang:hover, #search-button:hover, #options-menu:hover, #downloads-menu:hover, #about-button:hover {
+    border: 2px solid #6D6D6D;
+}
+
+#save_as_csv:enabled:hover, #save_as_svg:enabled:hover {
+    border: 1px solid #6D6D6D;
+}
+
+#save_as_svg:disabled {
+    background-color: #BBA277;
+}
+
+#about-button {
+    float: right;
+    background-color:rgb(96, 138, 179);
+    color:white;
+    width: 12%;
+}
+
+option {
+    /*	background-color:rgb(145,50,171);*/
+    padding:0.5em;
+    margin-top:0.1em;
+    margin-bottom:0.2em;
+}
+
+#range-wrap div {
+    display:inline-block;
+}
+
+#range-wrap {
+    margin-top: 0.75em;
+}
+
+#form-wrap {
+    margin-left:0%;
+    margin-right:0%;
+    width:100%;
+    margin-bottom:2em;
+    /*border:3px solid black;*/
+}
+
+.italic {
+    font-style:italic;
+}
+.bold {
+    font-weight:bold;
+}
+
+.area {
+    float:left;
+    font-size:0.8em;
+    padding: 5px;
+}
+
+.titu {
+    font-weight: bold;
+}
+
+/* The menu */
+    .ui-menu {
+	width: 300px;
+	z-index: 1000;
+}
+
+/* PRINT */
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    #chart svg {
+        background-color:rgb(255,255,255);
+        width:15cm;
+        height:100%;
+    }
+}

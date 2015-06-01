@@ -1,0 +1,121 @@
+  <html encoding="UTF-8">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+
+        <title>NB N-gram</title>
+
+        <link href="ngram/static/header-footer.css" rel="stylesheet" type="text/css"></link>
+        <link href="ngram/static/vendor/nv.d3.css" rel="stylesheet" type="text/css"></link>
+	<link rel="stylesheet" href="ngram/static/vendor/jquery-ui.min.css">
+        <link href="ngram/static/vendor/jquery.nouislider.css" rel="stylesheet">
+        <link href="ngram/static/vendor/jquery.nouislider.pips.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="ngram/static/vendor/jquery.dropdown.css"/>
+
+        <!-- JQuery -->
+        <script src="ngram/static/vendor/jquery-1.11.1.min.js"></script>
+        <script src="ngram/static/vendor/jquery-ui.min.js"></script>
+        <script src="ngram/static/vendor/jquery.nouislider.all.min.js"></script>
+        <script src="ngram/static/vendor/jquery.dropdown.min.js"></script>
+
+        <!-- Hashchange -->
+        <script src="ngram/static/vendor/jquery.ba-bbq.min.js"></script>
+
+        <!-- D3 -->
+        <script src="ngram/static/vendor/d3.min.js"></script>
+      	<script src="ngram/static/vendor/nv.d3.min.js"></script>
+
+      	<!-- FileSaver -->
+      	<script src="ngram/static/vendor/Blob.js"></script>
+      	<script src="ngram/static/vendor/FileSaver.min.js"></script>
+
+        <!-- json og csvparser -->
+        <script src="ngram/static/vendor/papaparse.min.js"></script>
+        <script src="ngram/static/vendor/spin.min.js"></script>
+
+        <script src="ngram/static/js/ngram-viewer.js"></script>
+    </head>
+
+    <body >
+
+        <header class="header" >
+        </header>
+
+        <div id="main">
+            <div id="form-wrap">
+                <form class="facets no-print" action="javascript:search($('#terms').val(), $('input[name=lang]:checked').val(), $('input[name=corpus]:checked').val())">
+                    <input class="search"
+                        id="terms"
+                        type="search"
+                        name="search"
+                        onfocus="this.value = this.value;"
+                        autofocus=""
+                        value=""
+                        placeholder="Enter search terms, separated by comma"/>
+                        <button class="search" id="search-button" type="submit">Search</button>
+                        <button class="search" id="options-menu" data-dropdown="#dropdown-1"><img src="ngram/static/icons/ic_settings_black_18dp.png" alt="Alternativer">
+
+                        <button class="search" id="downloads-menu" data-dropdown="#dropdown-2"><img src="ngram/static/icons/ic_file_download_black_18dp.png" alt="Alternativer">
+
+                        <button type="button" class="no-print" id="about-button">About</button>
+                    </input>
+                </form>
+            </div>
+            <div id="content-wrap">
+                <div id="chart">
+                    <svg></svg>
+                </div>
+            </div>
+            <div id="range-wrap" class="no-print">
+                <div id="select_lower">
+                    <select id="input-select-lower" class="selector" type="number">
+                    </select>
+                </div>
+                <div id=slider_container>
+                    <div id="slider" class="selector"></div>
+                    <div class="label">Period</div>
+                </div>
+                <div id="select_upper">
+                    <select id="input-select-upper" class="selector" type="number">
+                </select>
+                </div>
+                <div id=smoothing_container>
+                    <div id="smoothing_slider" class="selector"></div>
+                    <div class="label">Smoothing</div>
+                </div>
+            </div>
+        </div>
+
+      <footer>
+      </footer>
+
+    <div id="dropdown-1" class="dropdown dropdown-tip">
+            <ul class="dropdown-menu">
+                <li><label style="color:gray;text-align:center;background-color:white">Corpus</label></li>
+                <li><label><input type="radio" value="bok" id="bok" name="corpus" checked="checked">Books</label></li>
+                <li><label><input type="radio" value="avis" id="avis" name="corpus">Newspapers</label></li>
+                <li class="dropdown-divider"></li>
+                <li><label style="color:gray;text-align:center;background-color:white">Language variant</label></li>
+                <li><label><input type="radio" value="all" id="all" name="lang" checked="checked">Both variants</label></li>
+                <li><label><input type="radio" value="nob" id="nob" name="lang">Only Bokmål</label></li>
+                <li><label><input type="radio" value="nno" id="nno" name="lang">Only Nynorsk</label></li>
+                <li class="dropdown-divider"></li>
+                <li><label style="color:gray;text-align:center;background-color:white">Frequency</label></li>
+                <li><label><input type="radio" value="rel" id="rel" name="freq" checked="checked">Show relative frequency</label></li>
+                <li><label><input type="radio" value="abs" id="abs" name="freq">Show absolute frequency</label></li>
+                <li class="dropdown-divider"></li>
+                <li><label style="color:gray;text-align:center;background-color:white">View</label></li>
+                <li><label><input type ="checkbox" id="cumulative">Show cumulative graph</label></li>
+                <li><label><input type ="checkbox" id="monochrome">Grayscale mode</label></li>
+                <li class="dropdown-divider"></li>
+                <li><label><input type ="checkbox" id="case_sens">Case sensitive search (first letter only)</label></li>
+            </ul>
+        </div>
+
+        <div id="dropdown-2" class="dropdown dropdown-tip">
+            <ul class="dropdown-menu">
+                 <li><a onClick="save_as_svg()">Chart (.SVG)</a></li>
+                 <li><a onClick="save_as_csv()">Data (.CSV)</a></li>
+            </ul>
+        </div>
+    </body>
+ </html>
