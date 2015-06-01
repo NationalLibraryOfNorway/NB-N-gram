@@ -1,5 +1,5 @@
 # NB-N-gram
-This is the official repository of NB N-Gram, created by Språkbanken at the National Library of Norway. This repository contains both the backend, written in Python/Flask, and the frontend, written in HTML/JavaScript.
+This is the official repository of NB N-Gram, created by [Språkbanken](http://www.nb.no/Tilbud/Forske/Spraakbanken) at the [National Library of Norway](http://www.nb.no/). In its current form NB N-gram is a trend viewer, similar to [Google Ngram Viewer](https://books.google.com/ngrams). It shows you the development of words or sequences of words in the vast material digitized at the National Library of Norway, but it is also perfectly adoptable to other corpora. This repository contains both the backend, written in Python/Flask, and the frontend, written in HTML/JavaScript.
 
 ## Install
 To install:
