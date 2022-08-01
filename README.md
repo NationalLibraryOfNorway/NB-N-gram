@@ -5,7 +5,7 @@ This is the official repository of [NB N-Gram](http://www.nb.no/sp_tjenester/bet
 To install:
 
 1. Create a virtual environment and install the packages in `requirements.txt`
-2. Download the SQLite databases from [Språkbanken's repository](http://www.nb.no/sprakbanken/show?serial=sbr-35&lang=en) or provide your own data
+2. Download the SQLite databases from [Språkbanken's repository](https://hdl.handle.net/21.11146/35) or provide your own data
 3. Configure the paths to the databases and the database schema in `backend.py`
 4. Set the environment variable `FLASK_NGRAM_SETTINGS` to point to your Flask configuration file (eg. different settings for production and development machines): an example development configruation file is found in `flask-example-devsettings.cfg`
 5. Start the session with `python backend.py`, listens at 127.0.0.1:5000 per default (for development only!) or run it behind a WSGI server like UWSGI or Gunicorn (production use)
